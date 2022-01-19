@@ -1,0 +1,235 @@
+:root {
+    --container-bg-color: #333;
+    --left-bg-color: rgba(252,175,50, 0.8);
+    --left-button-hover-color: rgba(161, 11, 11, 0.3);
+    --right-bg-color: rgba(43, 43, 43, 0.8);
+    --right-button-hover-color: rgba(92, 92, 92, 0.3);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Manjari', sans-serif;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Styles for index.html */
+
+.title {
+    font-size: 4rem;
+    letter-spacing: 4px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+.fname {
+    position: relative;
+    left: 83%;
+    letter-spacing: 3px;
+}
+.lname {
+    position: relative;
+    left: 3%;
+    letter-spacing: 3px;
+    color: #FCAF32;
+}
+.button {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    height: 2.5rem;
+    padding-top: 1.3rem;
+    width: 15rem;
+    text-align: center;
+    color: #fff;
+    border: #fff solid 0.2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transform: translateX(-50%);
+}
+.split.left .button:hover {
+    background-color: var(--left-button-hover-color);
+    border-color: white;
+    transition: 0.3s all ease-in;
+}
+.split.right .button:hover {
+    background-color: var(--right-button-hover-color);
+    border-color: white;
+    transition: 0.3s all ease-in;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--container-bg-color);
+}
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+.split.left {
+    left: 0;
+    background: url('images/code.jpg') center center no-repeat;
+    background-size: cover;
+}
+.split.left:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--left-bg-color);
+}
+.split.right {
+    right: 0;
+    background: url('images/music.jpg') center center no-repeat;
+    background-size: cover;
+}
+.split.right:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--right-bg-color);
+}
+.split.left, .split.right, .split.left:before, .split.right:before {
+    transition: var(--speed) all ease-in-out;
+}
+.hover-left .left {
+    width: var(--hover-width);
+}
+.hover-left .right {
+    width: var(--other-width);
+}
+.hover-left .right:before {
+    z-index: 2;
+}
+.hover-right .right {
+    width: var(--hover-width);
+}
+.hover-right .left {
+    width: var(--other-width);
+}
+.hover-right .left:before {
+    z-index: 2;
+}
+
+
+/* Styles for Code.html */
+
+.header-style {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px;
+    background-color: #303030;
+}
+.code-body {
+    background-color: white;
+}
+.nav-links {
+    list-style: none;
+}
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: white;
+}
+.nav-links li a:hover {
+    color: lightblue;
+}
+.cta {
+    margin-right: 50px;
+    padding: 9px 25px;
+    background-color: #ffe680;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: #303030;
+}
+.cta:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+.name {
+    margin-left: 50px;
+    color: white;
+}
+.section1 {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row-reverse;
+    background-color: #ffe680;
+    align-items: stretch;
+}
+.sub-title1 {
+   position: relative;
+   top: 250px;
+   right: 50px;
+}
+.lock-image {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    top: 180px;
+}
+.section2 {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    background-color: #FCAF32;
+    overflow: hidden;
+    align-items: stretch;
+}
+.sub-title2 {
+   position: relative;
+   top: 250px;
+   right: 50px;
+}
+
+/* Styles for music.html */
+
+.header-music {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.header-music h1 {
+    text-align: center;
+    z-index: 2;
+    color: white;
+    font-size: 3rem;
+}
+
+.video-container {
+    position: absolute;
+    /* top: 0;
+    left: 0;
+    width: 100%; */
+    width: 100%;
+    height: auto;
+}
